@@ -64,8 +64,11 @@ int main()
 			//    한줄 추가되어야 합니다. OCP를 만족할수 없습니다.
 			switch (v[k]->type)
 			{
-			case 1: v.push_back(new Rect); break;
-			case 2: v.push_back(new Circle); break;
+//			case 1: v.push_back(new Rect(*v[k])); break; // error
+
+			case 1: v.push_back(new Rect(*(static_cast<Rect*>(v[k])))); break;
+
+			case 2: v.push_back(new Circle(*(static_cast<Circle*>(v[k])))); break;
 			}
 		}
 	}
