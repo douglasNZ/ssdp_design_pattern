@@ -32,6 +32,7 @@ int main()
 		{
 			for (auto p : v) // 여기서 p는 Shape* 인데
 				p->draw();   // Shape 에는 draw()가 없습니다.
+							// error
 		}
 	}
 }
