@@ -19,7 +19,6 @@ public:
 int main()
 {
 //	Shape  s; // error
-
-	Shape* p; 
-	Rect  r; // ok.
+	Shape* p; // ok. 
+	Rect  r;  // ok.
 }
