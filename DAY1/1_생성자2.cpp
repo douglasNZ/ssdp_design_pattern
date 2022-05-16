@@ -26,7 +26,8 @@ int main()
 //	People p1;	// 이렇게 객체를 만들수 있다는 것이 좋을까요 ? (초기화 되지 않은 객체)
 	People p2("kim", 20);
 
-	Stduent s(99);
+//	Student s(99); // error
+	Student s("kim", 20, 99); // ok
 }
 
 
