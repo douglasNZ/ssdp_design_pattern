@@ -7,16 +7,19 @@
 
 class Edit
 {
+protected:
 	std::string data;
 public:
 
 	// 공통성과 가변성의 분리
 	// 변하지 않은 코드내의 변해야 하는 부분은 가상함수로 분리한다.
+protected:
 	virtual bool validate(char c)
 	{
 		return true;
 	}
-
+	virtual bool iscomplete() {	return true; }
+public:
 	std::string getData()
 	{
 		data.clear();
@@ -25,7 +28,7 @@ public:
 		{
 			char c = _getch(); 
 
-			if (c == 13) break; 
+			if (c == 13 && iscomplete() ) break; 
 
 			if (validate(c)) // validation 정책은 별도의 가상함수 호출
 			{
@@ -42,12 +45,18 @@ public:
 // "라이브러리 확장"의 개념
 class NumEdit : public Edit
 {
-public:
+protected:
 	bool validate(char c) override
 	{
 		return isdigit(c);
 	}
+
+	bool iscomplete() override
+	{
+		return data.size() >= 5;  // 5자를 이상 입력해야지만 탈출 가능
+	}
 };
+
 
 int main()
 {
