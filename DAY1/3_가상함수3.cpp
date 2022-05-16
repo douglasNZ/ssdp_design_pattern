@@ -1,5 +1,12 @@
 #include <iostream>
 
+// 구글에서 "C++ Core Guideline" 검색해 보세요.
+// 1번째 링크
+
+// C35. 기반 클래스의 소멸자는 반드시
+// 1. public  가상함수이거나
+// 2. protected non-virtua 로 해야 한다.
+
 class Base
 {
 	// protected 소멸자를 사용하는 의도를 잘알아 두세요
