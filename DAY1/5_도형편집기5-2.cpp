@@ -1,6 +1,28 @@
 #include <iostream>
 #include <vector>
 
+
+// 6. 디자인 패턴이란 ?
+//    1994년에 4명의 C++ 개발자가 만든 책의 제목 
+//    GoF's Design Pattern
+
+// GOF : Gangs Of Four
+
+// 당시 사용되던 유명한 코딩 스타일에 "이름" 을 부여 한것
+
+// 23개의 이름이 부여됨
+
+// prototype 패턴 : 견본이 되는 객체를 만들고 견본 객체를 복사해서
+//					새로운 객체를 만드는 패턴
+//					clone() 가상함수.. 
+
+// 리팩토링 : 기존의 코드의 구조를 수정해서 보다 좋은 구조를 가지게 하는 작업
+
+// "Replace conditional with polymorphism"
+
+
+
+
 class Shape
 {
 protected:
@@ -79,3 +101,4 @@ int main()
 		}
 	}
 }
+// 3:00 ~ 에 이어집니다.
