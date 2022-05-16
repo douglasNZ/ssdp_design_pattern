@@ -19,7 +19,12 @@ public:
 
 	bool validate(const std::string& data, char c) override
 	{
-		return data.size() <= limit && isdigit(c);
+		return data.size() < limit && isdigit(c);
+	}
+
+	bool iscomplete(const std::string& data) override
+	{
+		return data.size() == limit;
 	}
 };
 
