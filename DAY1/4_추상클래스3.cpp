@@ -1,5 +1,19 @@
 #include <iostream>
 
+// 약한 결합(looselty coupling)
+// 하나의 클래스가 다른 클래스 사용시
+// 규칙을 담은 인터페이스(추상클래스)를 통해서 사용하는 것
+
+// 확장성 있는 유연한 디자인
+// OCP를 만족하는 디자인
+
+
+// 인터 페이스 : 지켜야 하는 규칙(순수가상함수)만 있는 경우 
+// 추상 클래스 : 지켜야 하는 규칙(순수가상함수) + 다른 멤버들도 있는 경우
+
+
+
+
 
 
 // 카메라를 먼저 만들지 말고 카메라와 사용자간에 지켜야 하는 규칙을 먼저 설계한다.
@@ -34,6 +48,12 @@ public:
 	void Take() { std::cout << "Take HD Picture" << std::endl; }
 };
 
+class UHDCamera : public ICamera
+{
+public:
+	void Take() { std::cout << "Take UHD Picture" << std::endl; }
+};
+
 int main()
 {
 	People p;
@@ -41,9 +61,10 @@ int main()
 	p.UseCamera(&c);
 
 	HDCamera hdc;
-	p.UseCamera(&hdc); // ??
+	p.UseCamera(&hdc); 
 
-
+	UHDCamera uhdc;
+	p.UseCamera(&uhdc); 
 }
 
 
