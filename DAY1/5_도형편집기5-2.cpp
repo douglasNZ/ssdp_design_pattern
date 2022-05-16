@@ -19,8 +19,8 @@
 // 리팩토링 : 기존의 코드의 구조를 수정해서 보다 좋은 구조를 가지게 하는 작업
 
 // "Replace conditional with polymorphism"
-
-
+// "제어문을 다형성으로 변경하라"
+//  5-1번의 swich 문장을 5-2 의 clone() 가상함수로 변경하라는것
 
 
 class Shape
