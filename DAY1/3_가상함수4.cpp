@@ -21,8 +21,16 @@ public:
 //	virtual void fooo() override {}
 //	virtual void goo(double)  override {}
 
-	void foo()    override {}
+	void foo()    override final {} 
+						// final : 더이상 재정의 할수 없다는 의미
 	void goo(int) override {}
+};
+
+class Derived3 : public Derived2
+{
+public:
+//	void foo() override {} // error
+	void goo(int) override {} // ok
 };
 
 int main()
