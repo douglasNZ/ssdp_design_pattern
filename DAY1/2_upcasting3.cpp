@@ -38,7 +38,6 @@ void NewYear(Animal* p)   // 모든 동물을 인자로 받는 함수.
 	// dynamic_cast : 실제 객체가 Dog 인 경우만 성공, 아니면 0 반환 
 	//				단, 반드시 가상함수가 한개 이상 있는 경우만 사용가능합니다.
 //	Dog* pDog = static_cast<Dog*>(p);
-
 	Dog* pDog = dynamic_cast<Dog*>(p);
 
 	std::cout << pDog << std::endl;
@@ -47,7 +46,6 @@ void NewYear(Animal* p)   // 모든 동물을 인자로 받는 함수.
 	{
 		pDog->color = 10;
 	}
-
 }
 
 int main()
@@ -55,9 +53,10 @@ int main()
 	Animal a; NewYear(&a);
 	Dog    d; NewYear(&d);
 	Cat    c; NewYear(&c);
-
 }
-
+// static_cast : 컴파일 시간 캐스팅, 실행시간에 오버헤드 전혀 없습니다.
+// dynamic_cast : 실행시간 캐스팅, 실행시간에 p가 가리키는 곳을 조사후에
+//					실제 객체가 맞는 경우만 허용
 
 
 
