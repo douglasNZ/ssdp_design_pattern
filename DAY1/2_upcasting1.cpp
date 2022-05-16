@@ -30,6 +30,8 @@ int main()
 	static_cast<Dog*>(p3)->color = 10; // ok
 }
 
+// 10:10분에 이어집니다
+
 
 
 
