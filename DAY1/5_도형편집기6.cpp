@@ -27,7 +27,6 @@ protected:
 	{
 		std::cout << "draw shape" << std::endl; 
 	}
-
 public:
 	void draw()
 	{
