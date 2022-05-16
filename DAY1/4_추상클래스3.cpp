@@ -23,6 +23,9 @@
 //      => 의도 : 모든 카메라에는 "Take()" 라는 이름의 함수 가 있어야한다.
 
 // "모든 카메라는 아래 인터페이스를 구현 해야 한다." 라고 표현 합니다
+// #define interface struct 
+// interface ICamera
+
 struct ICamera
 {
 	virtual void Take() = 0;
