@@ -48,19 +48,29 @@ class Rect : public Shape
 public:
 	void draw_imp() override { std::cout << "draw rect" << std::endl; }
 
-	Shape* clone() override
+	// 가상함수 override 할때 "반환 타입" 변경할수 있습니다.
+	// 단, 상속관계의 타입 끼리만 가능합니다.
+	// clone()은 원래 Shape* 반환인데, 아래 처럼 Rect* 로 해도 됩니다.
+	Rect* clone() override
 	{
 		Rect* p = new Rect(*this);
 		return p;
 	}
 };
+// Rect* r1 = new Rect;
+// 
+// Shape* r2 = r1->clone(); // ok
+// r2->Rect_의_고유의멤버함수(); // error
+// 
+// Rect* r3 = r1->clone(); // ??
+
+
 
 class Circle : public Shape
 {
 public:
 	void draw_imp()  override { std::cout << "draw circle" << std::endl; }
-
-	Shape* clone() override
+	Circle* clone() override
 	{
 		Circle* p = new Circle(*this);
 		return p;
